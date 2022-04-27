@@ -1,0 +1,18 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET"
+    },
+    "httpResponse": {
+      "delay": {
+        "timeUnit": "MILLISECONDS",
+        "value": 100
+      },
+      "body": {
+        "type": "JSON",
+        "json": "{\"Beatles\": [\"John\", \"Paul\", \"George\", \"Ringo\"]}",
+        "contentType": "application/json"
+      }
+    }
+  }
+]

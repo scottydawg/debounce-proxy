@@ -1,0 +1,19 @@
+
+version: '3'
+services:
+  db:
+    image: redis:6.2.6-alpine
+    ports:
+      - 6379:6379
+  mockServer:
+    image: mockserver/mockserver:5.13.2
+    command: -serverPort 1090
+    ports:
+      - 1080:1090
+    environment:
+      MOCKSERVER_PROPERTY_FILE: /config/mockserver.properties
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/initializerJson.json
+    volumes:
+      - type: bind
+        source: ./config
+        target: /config
